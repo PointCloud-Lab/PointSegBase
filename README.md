@@ -80,7 +80,7 @@ pip install git+https://github.com/mit-han-lab/torchsparse.git
 We provide the following datasets:
 
 - **Campus3D, Urban3D, PartNet-H**  
-[ [Hugging Face](https://huggingface.co/datasets/chenguolin/InstructScene_dataset) ] [ [Baidu Netdisk](https://pan.baidu.com/s/1pUnCJXRICnGuA_EWG8QHIA?pwd=2025) (Until 05/25/2026) ]  
+[ [Hugging Face](https://huggingface.co/datasets/Yuheng02/PointSegBase_Datasets) ] [ [Baidu Netdisk](https://pan.baidu.com/s/1pUnCJXRICnGuA_EWG8QHIA?pwd=2025) (Until 05/25/2026) ]  
 
 All datasets have been preprocessed and should be placed in the `data` folder.
 
