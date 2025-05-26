@@ -4,8 +4,8 @@
     </picture><br>
 </p>
 
-PointSegBase is a code base for point cloud segmentation. It is a comprehensive and easy-to-use code base for point cloud segmentation, including various models, datasets, and evaluation metrics.
-
+PointSegBase is a code base for point cloud segmentation. It is a comprehensive and easy-to-use code base for point cloud segmentation, including various models, datasets, and evaluation metrics.  
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FPointCloud-Lab%2FPointSegBase%3Ftab%3Dreadme-ov-file&label=Visitors&countColor=%23fedcba&style=flat&labelStyle=none)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FPointCloud-Lab%2FPointSegBase%3Ftab%3Dreadme-ov-file)  
 ## NEWS
 
 - [2025/05/25] Basic code is released.
