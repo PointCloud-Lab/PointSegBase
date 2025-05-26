@@ -1,0 +1,45 @@
+
+DATA:
+        DATA_LIST_FILE: "data_list/data_list.yaml"
+        H_MATRIX_LIST_FILE:  'data_list/matrix_file_list.yaml'
+DATASET:
+        RANDOM_SEED_BASIS: 0
+        SAMPLE:
+                #LABEL_WEIGHT_POLICY: "log"
+                SCENE_SAMPLER_TYPE: 'SceneSampler' #'SequentialSceneSampler' #'RandomSceneSampler'
+                POINT_SAMPLER_TYPE: 'BlockSampler' #'SlidingBlockSampler' #'RandomBlockSampler'
+                SETTING:
+                        SEARCH_MODULE: 'SkNN'
+                        BLOCK_SIZE:
+                                - 35
+                                - 35
+                        SLIDING_RATIO: 1
+                        SPARSE_THRESH_NUM_POINTS: 2000
+                        #SAMPLES_PER_SCENE: 1000 
+                        REBUILD_TREE: False
+                        MAX_SAMPLES_PER_EPCOH: 1000
+
+        TRANSFORMS:
+                POINT_TRANSFORMS:
+                        - 'Centeralization'
+                        # - 'SphericalNormalization'
+                        # - 'Scaling'
+                DATA_TRANSFORMS:
+                        # - 'DropPaddingShuffle'
+                        # - 'SwapDim'
+                        - 'LimitFilter'
+                        - 'Voxelization'
+                        
+                SETTING:
+                        # NUM_POINTS: 49152
+                        VOXEL_SIZE:
+                                - 0.25
+                                - 0.25
+                                - 0.25
+                        FEATURE_METHOD: 'mean'
+                        LABEL_METHOD: 'mode'
+                        DIM:
+                                - 0
+                                - 1
+                        LIMIT_POINT_NUM: 50000
+                        

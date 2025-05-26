@@ -1,0 +1,38 @@
+TRAIN:
+  MODEL_NAME: 'UNet' # 'UNet', 'PointNet2', 'PointCNN', 'DGCNN', 'RandLA'
+  OPTIMIZER: 'SGD' # 'SGD'or 'Adam'
+  MAX_WORKERS: 4 # Number of workers for data loader 4 or 8 if the number of cores is enough
+  LEARNING_RATE: 0.01
+  MOMENTUM: 0.9
+  NESTEROV: True
+  BATCH_SIZE: 4
+  MAX_EPOCH: 50
+  SCHEDULER: cos # 'cos' or 'step' or 'LambdaLR'
+
+  IS_PRETRAINED: False # Mainly used for evaluation, but can use pretrained model for training
+  PRETRAINED_MODEL_PATH: checkpoints/pointnet2_MT.t7 # Mainly used for evaluation, the trained model path
+
+  OUTPUT_DIR: log/
+  DROPOUT_RATE: 0.7  # DropOut Regularzation for MLP classifier, no need to change
+
+  LOSS_FUNCTION: 'ConsistencyLoss' # "ConsistencyLoss" =  "ConsistencyLoss" + "MultiLevelCrossEntropyLoss",  "HeirarchicalCrossEntropyLoss"
+  TRAIN_IGNORE_LABEL: 0
+  CONSISTENCY_LOSS_EPOCH: 100 #
+  REG_FUNC: 'relu'  #'abs' or 'relu'
+
+  DATASET: 'Partnet'
+
+  CONSISTENCY_LOSS_WEIGHT:
+    - 1
+    - 1
+  LAYER_WEIGHTS:
+    - 1
+    # - 1
+    # - 1
+    #- 1
+
+DEVICES:
+  GPU_ID: 
+    - 0
+  SEED: 1
+

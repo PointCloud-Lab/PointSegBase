@@ -1,0 +1,35 @@
+
+DATA:
+        DATA_LIST_FILE: "data_list/data_list.yaml"
+        H_MATRIX_LIST_FILE:  'data_list/matrix_file_list.yaml'
+DATASET:
+        USE_COLOR: True # False for PartNet
+        RANDOM_SEED_BASIS: 0
+        SAMPLE:
+
+                SCENE_SAMPLER_TYPE: 'SceneSampler' #'SequentialSceneSampler' for PartNet
+                POINT_SAMPLER_TYPE: 'BlockSampler' #'ObjectSampler' for PartNet
+                SETTING:
+                        BLOCK_SIZE: 
+                                - 30 #
+                                - 30 #
+                        SLIDING_RATIO: 1.0 
+                        SPARSE_THRESH_NUM_POINTS: 2000 
+                        REBUILD_TREE: False 
+                        MAX_SAMPLES_PER_EPCOH: 1000 # Delete for PartNet
+
+        TRANSFORMS:
+                POINT_TRANSFORMS:
+                        - 'Centeralization' # only work for Urban3D Campus3D
+                        #- 'SphericalNormalization' # only work for PartNet
+                DATA_TRANSFORMS:
+                        - 'LimitFilter' 
+                        - 'Voxelization' 
+                SETTING:
+                        VOXEL_SIZE:  
+                                - 0.3 # much smaller in ParrNet like 0.025
+                                - 0.3 #
+                                - 0.3 #
+                        FEATURE_METHOD: 'mean' 
+                        LABEL_METHOD: 'mode'
+                        LIMIT_POINT_NUM: 50000 

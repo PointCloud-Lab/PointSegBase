@@ -1,0 +1,34 @@
+
+DATA:
+        DATA_LIST_FILE: "data_list/data_list.yaml"
+        H_MATRIX_LIST_FILE:  'data_list/matrix_file_list.yaml'
+DATASET:
+        RANDOM_SEED_BASIS: 0
+        USE_COLOR: False # Whether to use color information, False for PartNet
+        SAMPLE:
+                #LABEL_WEIGHT_POLICY: "log"
+                SCENE_SAMPLER_TYPE: 'SequentialSceneSampler' #'SceneSampler'={'SequentialSceneSampler' 'RandomSceneSampler'}  #'SequentialSceneSampler' for PartNet
+                POINT_SAMPLER_TYPE: 'ObjectSampler' #'BlockSampler'={'SlidingBlockSampler' 'RandomBlockSampler'}  #'ObjectSampler' for PartNet
+                SETTING:
+                        BLOCK_SIZE: #For BlockSampler', x-y block size
+                                - 20
+                                - 20
+                        SLIDING_RATIO: 1.0 #For 'SlidingBlockSampler', the overlap ratio in sliding block is (1.0-SLIDING_RATIO)
+                        SPARSE_THRESH_NUM_POINTS: 2000 #For 'BlockSampler', the block with points less than SPARSE_THRESH_NUM_POINTS are ignored
+                        REBUILD_TREE: False #For search-based samplers including  'BlockSampler' and 'KnnSampler', whether to rebuild the tree for a data file. 
+                        MAX_SAMPLES_PER_EPCOH: 200 #For "RandomSceneSampler" and "SceneSampler" usage, the maximum number of samples per epoch, if it has not been set, the sample number is very large.
+
+        TRANSFORMS:
+                POINT_TRANSFORMS:
+                        # - 'Centeralization' # Neccessary for Block-based sampler
+                        - 'SphericalNormalization' # Neccessary for PointNet2
+                        # - 'Scaling' # Can be used for RandLANet  
+                        
+                DATA_TRANSFORMS:
+                        - 'DropPaddingShuffle' # For point-based network + Block-based Sampler: PointNet2, RandLANet
+                        - 'SwapDim'  # For PointNet2, swap the data dimension 1 and 2
+                SETTING:
+                        NUM_POINTS: 10000 # For DropPaddingShuffle transform
+                        DIM: # For SwapDim transform
+                                - 0
+                                - 1

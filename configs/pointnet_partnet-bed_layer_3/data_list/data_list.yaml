@@ -1,0 +1,16 @@
+MAIN_DATA_PATH: '/root/autodl-tmp/PointCloudSegBase/data/PartNet_seg_h5/'
+MAIN_LABEL_PATH: '/root/autodl-tmp/PointCloudSegBase/data/PartNet_seg_h5/'
+TRAIN:
+  - DATA_PATH:
+      DATA: 'Bed/Bed-3/train-00.h5'
+      LABEL: 'Bed/Bed-3/train-00.h5'
+
+TEST:
+  - DATA_PATH:
+      DATA: 'Bed/Bed-3/test-00.h5'
+      LABEL: 'Bed/Bed-3/test-00.h5'
+
+VALIDATION:
+  - DATA_PATH:
+      DATA: 'Bed/Bed-3/val-00.h5'
+      LABEL: 'Bed/Bed-3/val-00.h5'

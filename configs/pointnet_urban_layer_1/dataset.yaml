@@ -1,0 +1,44 @@
+
+DATA:
+        DATA_LIST_FILE: "data_list/data_list.yaml"
+        H_MATRIX_LIST_FILE:  'data_list/matrix_file_list.yaml'
+DATASET:
+        RANDOM_SEED_BASIS: 0
+        USE_COLOR: True # Whether to use color information, False for PartNet
+        SAMPLE:
+                #LABEL_WEIGHT_POLICY: "log"
+                SCENE_SAMPLER_TYPE: 'SceneSampler' #'SceneSampler'={'SequentialSceneSampler' 'RandomSceneSampler'}  #'SequentialSceneSampler' for PartNet
+                POINT_SAMPLER_TYPE: 'BlockSampler' #'BlockSampler'={'SlidingBlockSampler' 'RandomBlockSampler'}  #'ObjectSampler' for PartNet
+                SETTING:
+                        BLOCK_SIZE: #For BlockSampler', x-y block size
+                                - 20
+                                - 20
+                        SLIDING_RATIO: 1.0 #For 'SlidingBlockSampler', the overlap ratio in sliding block is (1.0-SLIDING_RATIO)
+                        SPARSE_THRESH_NUM_POINTS: 2000 #For 'BlockSampler', the block with points less than SPARSE_THRESH_NUM_POINTS are ignored
+                        REBUILD_TREE: False #For search-based samplers including  'BlockSampler' and 'KnnSampler', whether to rebuild the tree for a data file. 
+                        MAX_SAMPLES_PER_EPCOH: 200 #For "RandomSceneSampler" and "SceneSampler" usage, the maximum number of samples per epoch, if it has not been set, the sample number is very large.
+
+        TRANSFORMS:
+                POINT_TRANSFORMS:
+                        # - 'Centeralization' # Neccessary for Block-based sampler
+                        - 'SphericalNormalization' # Neccessary for PointNet2
+                        # - 'Scaling' # Can be used for RandLANet  
+                        
+                DATA_TRANSFORMS:
+                        - 'DropPaddingShuffle' # For point-based network + Block-based Sampler: PointNet2, RandLANet
+                        # - 'Voxelization' # For voxel-based network: ResUNet
+                        # - 'LimitFilter' # For voxel-based network: ResUNet, (Memory efficient) not exceed a certain number of points like 60,000
+                        - 'SwapDim'  # For PointNet2, swap the data dimension 1 and 2
+                SETTING:
+                        NUM_POINTS: 4096 # For DropPaddingShuffle transform for pointnet2 :2048 or 4096
+                        VOXEL_SIZE:  # For Voxelization transform
+                                - 0.3
+                                - 0.3
+                                - 0.3
+                        FEATURE_METHOD: 'mean' # For Voxelization transform, how to combine multi-features within a voxel
+                        LABEL_METHOD: 'mode' # For Voxelization transform, how to combine multi-labels within a voxel
+                        DIM: # For SwapDim transform
+                                - 0
+                                - 1
+                        LIMIT_POINT_NUM: 50000 # For LimitFilter transform, the maximum number of points in a scene
+                        SCALE: 0.1 # For Scaling transform, normally we set as the same as 2./ max(Block_size) in Block-based sampler
