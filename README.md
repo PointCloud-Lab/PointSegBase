@@ -10,8 +10,8 @@ PointSegBase is a code base for point cloud segmentation. It is a comprehensive 
 
 - [2025/05/25] Basic code is released.
 - [2025/02/05] 🚀 Our work 'Deep Hierarchical Learning for 3D Semantic Segmentation' is accepted by IJCV.
-- [2024/08/12] 🚀 Our work 'Pyramid Diffusion for 3D Point Cloud Segmentation' is selected as **Oral Presentation**.
-- [2024/07/02] 🚀 Our work 'Pyramid Diffusion for 3D Point Cloud Segmentation' is accepted by ECCV 2024.
+- [2024/08/12] 🚀 Our work 'Pyramid Diffusion for Fine 3D Large Scene Generation' is selected as **Oral Presentation**.
+- [2024/07/02] 🚀 Our work 'Pyramid Diffusion for Fine 3D Large Scene Generation' is accepted by ECCV 2024.
 - [2023/11/29] Official repo is created, code will be released soon, access our [Project Page](https://dhl3d.github.io/) for more details.
 
 ## Related Projects
@@ -24,7 +24,7 @@ International Journal of Computer Vision (**IJCV**) 2025
 [ [Project](https://dhl3d.github.io/) ] [ [Paper](https://link.springer.com/article/10.1007/s11263-025-02387-6) ]
 
 
-- **Pyramid Diffusion for 3D Point Cloud Segmentation**  
+- **Pyramid Diffusion for Fine 3D Large Scene Generation**  
 *Yuheng Liu, Xinke Li, Xueting Li, Lu Qi, Chongshou Li, Ming-Hsuan Yang*  
 European Conference on Computer Vision (**ECCV**) 2024 - **Oral Presentation (top 2%)**  
 [ [Project](https://yuheng.ink/project-page/pyramid-discrete-diffusion/) ] [ [arXiv](https://arxiv.org/abs/2311.12085) ] [ [Code](https://github.com/yuhengliu02/pyramid-discrete-diffusion) ]
