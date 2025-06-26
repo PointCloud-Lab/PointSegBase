@@ -8,6 +8,7 @@ PointSegBase is a code base for point cloud segmentation. It is a comprehensive 
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FPointCloud-Lab%2FPointSegBase%3Ftab%3Dreadme-ov-file&label=Visitors&countColor=%23fedcba&style=flat&labelStyle=none)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FPointCloud-Lab%2FPointSegBase%3Ftab%3Dreadme-ov-file)  
 ## NEWS
 
+- [2025/06/26] 🚀 Our work 'Controllable 3D Outdoor Scene Generation via Scene Graphs' is accepted by ICCV 2025.
 - [2025/05/25] Basic code is released.
 - [2025/02/05] 🚀 Our work 'Deep Hierarchical Learning for 3D Semantic Segmentation' is accepted by IJCV.
 - [2024/08/12] 🚀 Our work 'Pyramid Diffusion for Fine 3D Large Scene Generation' is selected as **Oral Presentation**.
@@ -23,6 +24,10 @@ There are several works that are based / used PointSegBase, including:
 International Journal of Computer Vision (**IJCV**) 2025  
 [ [Project](https://dhl3d.github.io/) ] [ [Paper](https://link.springer.com/article/10.1007/s11263-025-02387-6) ]
 
+- **Controllable 3D Outdoor Scene Generation via Scene Graphs**  
+*Yuheng Liu, Xinke Li, Yuning Zhang, Lu Qi, Xin Li, Wenping Wang, Chongshou Li, Xueting Li, Ming-Hsuan Yang*  
+International Conference on Computer Vision (**ICCV**) 2025  
+[ [Project](https://yuheng.ink/project-page/control-3d-scene/) ] [ [arXiv](https://arxiv.org/abs/2503.07152) ] [ [Code](https://github.com/yuhengliu02/control-3d-scene) ]
 
 - **Pyramid Diffusion for Fine 3D Large Scene Generation**  
 *Yuheng Liu, Xinke Li, Xueting Li, Lu Qi, Chongshou Li, Ming-Hsuan Yang*  
@@ -37,6 +42,15 @@ If you find this code base useful, please consider citing:
         title={Deep Hierarchical Learning for 3D Semantic Segmentation},
         author={Chongshou Li and Yuheng Liu and Xinke Li and Yuning Zhang and Tianrui Li and Junsong Yuan},
         booktitle={International Journal of Computer Vision},
+        year={2025}
+    }
+```
+
+```bibtex
+    @article{liu2025controllable3doutdoorscene,
+        title={Controllable 3D Outdoor Scene Generation via Scene Graphs},
+        author={Yuheng Liu and Xinke Li and Yuning Zhang and Lu Qi and Xin Li and Wenping Wang and Chongshou Li and Xueting Li and Ming-Hsuan Yang},
+        booktitle={arXiv preprint arXiv:2503.07152},
         year={2025}
     }
 ```
